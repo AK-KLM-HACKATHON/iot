@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Peace and Quiet</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+      
+var $elements = $('.lamp').css('visibility','hidden'),
+    $visible = $elements.first().css('visibility','visible');
+
+setInterval(function(){
+	
+    var $next = $visible.next('.lamp');
+    if(!$next.length)
+        $next = $elements.first();
+    $visible = $next.css('visibility','visible');
+	
+	var colors = ['red', 'green', 'yellow'];
+
+	$visible = $next.css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+},3000);
+
+    });
+</script>
+
+<style>
+.lamp {
+    height: 15px;
+    width: 15px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.lamp_real {
+    height: 30px;
+    width: 30px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.lampRed {
+    background-color: red;
+}
+.lampYellow {
+    background-color: yellow;
+}
+.lampGreen {
+    background-color: green;
+}
+
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("plan.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="bg">
+<div id="lamp_1" class="lamp" style="position: relative; left: 370px; top: 100px;">
+	<div class="lampRed"></div>
+	<div class="lampYellow"></div>
+	<div class="lampGreen"></div>
+</div>
+
+<div id="lamp_2" class="lamp" style="position: relative; left: 1150px; top: 100px;">
+	<div class="lampRed"></div>
+	<div class="lampYellow"></div>
+	<div class="lampGreen"></div>
+</div>
+
+
+<div id="lamp_3" class="lamp" style="position: relative; left: 420px; top: 560px;">
+	<div class="lampRed"></div>
+	<div class="lampYellow"></div>
+	<div class="lampGreen"></div>
+</div>
+
+<div id="lamp_4" class="lamp lamp_real" style="position: relative; left: 370px; top: 100px;">
+	<div class="lampRed"></div>
+	<div class="lampYellow"></div>
+	<div class="lampGreen"></div>
+</div>
+
+
+</div>
+
+</body>
+</html>
