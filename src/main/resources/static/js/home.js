@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    timer.start(30);
+    timer.start(3);
 });
 
 var timer = (function() {
@@ -24,6 +24,7 @@ var timer = (function() {
             count--;
             if(count == 0){
                 timer.fire_ajax()
+                timer.start(3)
             }
         },
 
@@ -31,7 +32,7 @@ var timer = (function() {
             $.ajax({
                 type: "GET",
                 contentType: "application/json",
-                url: "/getBaggageStatus",
+                url: "/getNoiseLevel",
                 cache: false,
                 timeout: 600000,
                 success: function (data) {

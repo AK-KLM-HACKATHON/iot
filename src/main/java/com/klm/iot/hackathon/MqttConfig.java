@@ -12,11 +12,8 @@ import org.springframework.scheduling.concurrent.DefaultManagedTaskScheduler;
 /**
  * Created by klm75203 on 7/10/2017.
  */
-@Configuration
+//@Configuration
 public class MqttConfig {
-
-
-
 
     @Bean
     public MessageChannel mqttChannel() {
