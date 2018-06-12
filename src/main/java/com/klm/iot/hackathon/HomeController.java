@@ -17,14 +17,14 @@ public class HomeController {
 
     @GetMapping("/getNoiseLevel")
     public ResponseEntity<?> getBaggageStatus(HttpServletRequest request) {
-        System.out.println("controller called");
+        //System.out.println("controller called");
         return ResponseEntity.ok(messageService.getData());
 
     }
     @GetMapping("/")
     public Object welcome(Model model) {
         model.addAttribute("data", messageService.getData());
-        return "/home";
+        return "/index";
     }
 
 }
