@@ -5,14 +5,14 @@ $(document).ready(function () {
 
 var timer = (function() {
     var timeoutRef;
-    var timerElement;
+    var divElement;
     var count;
 
     return {
 
         start : function(givenTime) {
             count = givenTime;
-            timerElement = document.getElementById('timer-id');
+            divElement = document.getElementById('lamp_4');
             timer.run();
         },
 
@@ -36,11 +36,14 @@ var timer = (function() {
                 cache: false,
                 timeout: 600000,
                 success: function (data) {
-                    if (timerElement) {
-                        var html = "<progress value="+data+" max=\"100\"></progress>"
-                        timerElement.innerHTML = html;
-                    }
 
+                    if(data > 500){
+                        divElement.style.backgroundColor = "red"
+                    }else if(data > 350 && data < 500){
+                        divElement.style.backgroundColor = "yellow"
+                    }else{
+                        divElement.style.backgroundColor = "green"
+                    }
                 }
             });
         }
