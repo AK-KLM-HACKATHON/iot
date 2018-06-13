@@ -2,13 +2,17 @@ package com.klm.iot.hackathon;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Random;
-
 @Component
 public class MessageService {
 
+    int noiseLevel;
+
+    public void setNoiseLevel(int noiseLevel){
+            this.noiseLevel = noiseLevel;
+    }
+
     public int getData(){
-        return new Random().nextInt(100-0) + 0;
+        return noiseLevel;
     }
 
 }
