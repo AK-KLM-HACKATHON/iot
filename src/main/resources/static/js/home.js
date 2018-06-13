@@ -38,11 +38,11 @@ var timer = (function() {
                 success: function (data) {
 
                     if(data > 500){
-                        divElement.style.backgroundColor = "red"
+                        divElement.style.backgroundImage = "url('silence_red.PNG')"
                     }else if(data > 400 && data < 500){
-                        divElement.style.backgroundColor = "yellow"
+                        divElement.style.backgroundImage = "url('silence_orange.PNG')"
                     }else{
-                        divElement.style.backgroundColor = "green"
+                        divElement.style.backgroundImage = "url('silence_green.PNG')"
                     }
                 }
             });
