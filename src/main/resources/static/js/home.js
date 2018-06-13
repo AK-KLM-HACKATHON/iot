@@ -39,7 +39,7 @@ var timer = (function() {
 
                     if(data > 500){
                         divElement.style.backgroundColor = "red"
-                    }else if(data > 350 && data < 500){
+                    }else if(data > 400 && data < 500){
                         divElement.style.backgroundColor = "yellow"
                     }else{
                         divElement.style.backgroundColor = "green"
